@@ -1,0 +1,27 @@
+.container {
+  display: grid;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.img {
+  align-self: center;
+  margin-top: 3rem;
+}
+
+.card p {
+  margin: 0;
+}
+
+.card h3 {
+  margin: 0.5rem 0;
+}
+.container h2 {
+  margin-bottom: 0;
+}
+.container h2 span {
+  color: var(--primary);
+}
