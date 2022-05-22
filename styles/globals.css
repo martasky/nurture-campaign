@@ -36,7 +36,7 @@ h2 span {
 }
 
 h2 {
-  font-size: 2.375rem;
+  font-size: 2.44rem;
   margin-bottom: 1rem;
 }
 
@@ -45,4 +45,49 @@ h3 {
 }
 p {
   font-size: 1rem;
+  font-weight: 300;
+}
+
+.container {
+  margin: 10rem;
+}
+
+button {
+  width: 100%;
+  padding: 20px 10px;
+  background-color: var(--primary);
+  color: white;
+  text-transform: uppercase;
+  box-shadow: none;
+  border: none;
+  border-radius: 50px;
+  margin-top: 1.5rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: grid;
+  place-items: center;
+}
+
+ul {
+  padding: 0;
+  display: grid;
+  gap: 0.8rem;
+}
+
+li {
+  list-style: none;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+}
+
+label {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+input {
+  accent-color: var(--primary);
+  border-color: var(--primary);
 }

@@ -5,6 +5,7 @@ import ProductIntro from "../components/landingPage/productIntro";
 import QuizSection from "../components/landingPage/quizSection";
 import SocialProof from "../components/landingPage/socialProof";
 import ValueProposition from "../components/landingPage/valueProposition";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -21,6 +22,9 @@ export default function Home() {
       <SocialProof />
       <QuizSection />
       <ProductIntro />
+      <Link href="/quiz?index=0">
+        <a>Take quiz</a>
+      </Link>
     </>
   );
 }

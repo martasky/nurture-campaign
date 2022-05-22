@@ -32,3 +32,21 @@ export enum TITLES {
 }
 
 export enum FOOTER {}
+
+export enum QUIZ {
+  title = "Before you start...",
+  introduction = "There are no wrong answers. Go for the option you feel more identified with.",
+  practicalQuestion1 = "My preferred location of the nursery is...",
+  practicalQuestion2 = "I want my child to start attending...",
+  childQuestion1 = "My child is...",
+  childQuestion2 = "My child is...",
+  childQuestion3 = "My child’s favourite dinosaur is...",
+  parentQuestion1 = "I work...",
+  parentQuestion2 = "As a parent, I tend to be...",
+  preferenceQuestion1 = "When choosing a nursery, the most important to me are...",
+  preferenceQuestion2 = "My preferred teaching method is...",
+  preferenceQuestion3 = "Regarding the nursery, I prefer that...",
+  summary = "Your personal preferences are:",
+  seeList = "After analysing your answers, we have set a list of nurseries for you:",
+  thankYou = "Thank you!",
+}
