@@ -4,6 +4,7 @@ import styles from "./productIntro.module.css";
 const ProductIntro = () => {
   return (
     <div className={styles.container}>
+    <div className={styles.textContainer}>
       <h2>
         {TITLES.title} <span>simple</span>
       </h2>
@@ -22,6 +23,11 @@ const ProductIntro = () => {
         contact them directly from Nurture by sending an inquiry. Yes, it is
         that easy!
       </p>
+    </div>
+    <div className={styles.videoContainer}>
+      <video><source src="/./videos/animatedLogo.webm"></source></video>
+    </div>
+    <div className={styles.findContainer}><p>Find the perfect nursery with</p> <a href="https://findnurture.com/"><div><img src="/./images/nurtureLogo.svg"></img></div></a></div>
     </div>
   );
 };
