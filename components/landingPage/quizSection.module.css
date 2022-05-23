@@ -55,11 +55,16 @@
             width:100%;
         }
 
-        .cta {
+        .button {
             grid-column: 2;
             grid-row: 2;
-            margin: 0
+            margin: 0;
+            padding:0;
         }
+        .cta {
+          margin: 0;
+      
+      }
         
         
       }
@@ -75,7 +80,7 @@
             align-self: start;
         }
 
-        .cta{
+        .button{
             grid-column: 2;
             grid-row: 1;
         align-self: end;

@@ -3,17 +3,20 @@ import { TITLES, BUTTONS, INTROTXT } from "../../content/constants";
 import Image from "next/image";
 import styles from "./hero.module.css";
 import Link from 'next/link';
+
+import Loader from "./getAdjectives"
+const adjectives =["easy", "fun", "trustworthy", "simple"]
 const Hero = () => {
   return <>
   <section className={styles.heroblock}>
     <div className={styles.text}><h2>
         {TITLES.title}
-        <span>fun</span> 
+        <span><Loader adjectives={adjectives}/></span> 
       </h2>
       <h2>{TITLES.headingTwo }</h2>
       <p>{INTROTXT.p1}</p>
       <p>{INTROTXT.p2}</p></div>
-      <Link href="pages/quiz.tsx"><a><div className={styles.cta}>
+      <Link  href="pages/quiz.tsx"><a className={styles.button}><div className={styles.cta}>
             {BUTTONS.takeQuiz}</div></a></Link>
       <div className={styles.arrow}> 
       <Image
@@ -41,3 +44,8 @@ const Hero = () => {
 };
 
 export default Hero;
+
+
+ 
+  
+

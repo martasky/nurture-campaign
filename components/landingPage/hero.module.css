@@ -55,13 +55,13 @@ margin:auto
 @media screen and (min-width: 800px){
     .heroblock {
         margin: 15vh 5vw 0 5vw;
-        display: grid;
         grid-template-columns:  2fr 3fr;
         justify-content: start;
     }
 
     .text {
         grid-column:1;
+        grid-row: 1;
         align-self: start;
     }
 
@@ -70,13 +70,13 @@ margin:auto
         grid-row: 1
     }
 
-    .cta {
+    .button {
         grid-column: 1;
-        grid-row: 1;
-        align-self: end;
+        grid-row: 2;
+        align-self: start;
         justify-self: left;
         margin:0;
-        padding: 1em;
+        padding: 0;
         
     }
 

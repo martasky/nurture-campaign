@@ -12,7 +12,7 @@ const QuizSection = () => {
     <p>{TOQUIZTXT.p1}</p>
     <p>{TOQUIZTXT.p2}</p>
   </div>
-  <Link href="pages/quiz.tsx"><a><div className={styles.cta}>
+  <Link href="pages/quiz.tsx"><a className={styles.button}><div className={styles.cta}>
   {BUTTONS.startQuiz}</div></a></Link>
   </div>
   </>;
