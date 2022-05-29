@@ -1,6 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
 
-module.exports = nextConfig
+module.exports = {
+  reactStrictMode: true,
+  assetPrefix: "/.",
+  trailingSlash: true,
+
+  images: {
+    domains: [
+      "https://parent-portal-nurseries-photos-production.s3.eu-central-1.amazonaws.com/",
+    ],
+  },
+};

@@ -1,20 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import { QUIZ } from "../../content/constants";
 import styles from "./QuizStyle.module.css";
 import StartQuizBtn from "../buttons/startQuizBtn";
-import { useRouter } from "next/router";
-const QuizStart = () => {
-  const router = useRouter();
-  // useEffect(() => {
-  //   router.push({
-  //     pathname: "/quiz",
-  //     query: {
-  //       index: "0",
-  //     },
-  //   });
-  // }, [router]);
 
+const QuizStart = () => {
   return (
     <div className={styles.container}>
       <div className={styles.img}>

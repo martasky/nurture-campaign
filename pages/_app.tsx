@@ -1,10 +1,13 @@
 import Layout from "../components/layout";
+import QuizContextWrapper from "../context/quizContextWrapper";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
-      <Component {...pageProps} />
+      <QuizContextWrapper>
+        <Component {...pageProps} />
+      </QuizContextWrapper>
     </Layout>
   );
 }
