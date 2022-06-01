@@ -31,7 +31,7 @@ const NextQuestionBtn = () => {
       onClick={previousPage}
     >
       <Image
-        src="/./images/quizIcons/arrow-back-purple.png"
+        src="/images/quizIcons/arrow-back-purple.png"
         alt="arrow icon"
         width={30}
         height={20}

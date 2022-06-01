@@ -33,13 +33,7 @@ const ChildQuestionTwo = () => {
   }, [childPersonality, setFormParams]);
 
   const getChildPersonality = useCallback(
-    (
-      event: React.ChangeEvent<HTMLInputElement>,
-      answer: {
-        adj1: string;
-        adj2: string;
-      }
-    ) => {
+    (event: React.ChangeEvent<HTMLInputElement>) => {
       let { name, value } = event.target;
 
       setChildPersonality((previousChildPersonality) => ({
@@ -69,7 +63,7 @@ const ChildQuestionTwo = () => {
       <div className={styles.wrapperDesktop}>
         <div className={styles.img}>
           <Image
-            src="/./images/quiz/Q4.webp"
+            src="/images/quiz/Q4.webp"
             alt="Quiz illustration"
             width={isDesktop ? 350 : 250}
             height={isDesktop ? 280 : 200}
@@ -96,7 +90,7 @@ const ChildQuestionTwo = () => {
                     step="1"
                     value={Object.values(formParams.childPersonality)[index]}
                     onChange={(event) => {
-                      getChildPersonality(event, answer);
+                      getChildPersonality(event);
                     }}
                   />
                 </li>

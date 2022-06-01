@@ -8,28 +8,28 @@ const ProgressBar = () => {
   const { isDesktop } = useContext(MediaContext);
   const progressPuzzle = {
     piece1: {
-      on: "/./images/progressBar/piece1-on.png",
-      off: "/./images/progressBar/piece1-off.png",
+      on: "/images/progressBar/piece1-on.png",
+      off: "/images/progressBar/piece1-off.png",
     },
     piece2: {
-      on: "/./images/progressBar/piece2-on.png",
-      off: "/./images/progressBar/piece2-off.png",
+      on: "/images/progressBar/piece2-on.png",
+      off: "/images/progressBar/piece2-off.png",
     },
     piece3: {
-      on: "/./images/progressBar/piece3-on.png",
-      off: "/./images/progressBar/piece3-off.png",
+      on: "/images/progressBar/piece3-on.png",
+      off: "/images/progressBar/piece3-off.png",
     },
     piece4: {
-      on: "/./images/progressBar/piece4-on.png",
-      off: "/./images/progressBar/piece4-off.png",
+      on: "/images/progressBar/piece4-on.png",
+      off: "/images/progressBar/piece4-off.png",
     },
     bars: {
       up: isDesktop
-        ? "/./images/progressBar/separatorDesktopUp.png"
-        : "/./images/progressBar/separator-up.png",
+        ? "/images/progressBar/separatorDesktopUp.png"
+        : "/images/progressBar/separator-up.png",
       down: isDesktop
-        ? "/./images/progressBar/separatorDesktopDown.png"
-        : "/./images/progressBar/separator-down.png",
+        ? "/images/progressBar/separatorDesktopDown.png"
+        : "/images/progressBar/separator-down.png",
     },
   };
 

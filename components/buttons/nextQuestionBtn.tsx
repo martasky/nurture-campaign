@@ -22,7 +22,7 @@ const NextQuestionBtn = ({ hasBeenClicked }) => {
     <button disabled={!hasBeenClicked} onClick={nextPage}>
       <div className={styles.findResults}>
         <Image
-          src="/./images/quizIcons/arrow-next-white.png"
+          src="/images/quizIcons/arrow-next-white.png"
           alt="arrow icon"
           width={30}
           height={20}

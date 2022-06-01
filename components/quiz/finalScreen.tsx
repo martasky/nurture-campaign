@@ -22,7 +22,7 @@ const FinalScreen = () => {
         >
           <div className={styles.img}>
             <Image
-              src="/./images/quiz/puzzle.webp"
+              src="/images/quiz/puzzle.webp"
               alt="Quiz illustration puzzle"
               width={isDesktop ? 250 : 150}
               height={isDesktop ? 250 : 150}
@@ -49,7 +49,7 @@ const FinalScreen = () => {
               <li>
                 <span>
                   <Image
-                    src="/./images/quizIcons/location.webp"
+                    src="/images/quizIcons/location.webp"
                     alt="Quiz icon"
                     width={30}
                     height={40}
@@ -63,7 +63,7 @@ const FinalScreen = () => {
               <li>
                 <span>
                   <Image
-                    src="/./images/quizIcons/clock.webp"
+                    src="/images/quizIcons/clock.webp"
                     alt="Quiz icon"
                     width={30}
                     height={40}
@@ -83,7 +83,7 @@ const FinalScreen = () => {
               <li>
                 <span>
                   <Image
-                    src="/./images/quizIcons/ratio.webp"
+                    src="/images/quizIcons/ratio.webp"
                     alt="Quiz icon"
                     width={30}
                     height={40}
@@ -109,9 +109,8 @@ const FinalScreen = () => {
                   alignItems: "start",
                 }}
               >
-                <span>&#8226;</span>{" "}
+                <span>&#8226;</span>
                 <div>
-                  {" "}
                   is more
                   {Object.values(formParams.childPersonality).map(
                     (value, index) => (
@@ -158,7 +157,7 @@ const FinalScreen = () => {
                 <li>
                   <span>
                     <Image
-                      src="/./images/quizIcons/rating.webp"
+                      src="/images/quizIcons/rating.webp"
                       alt="Quiz icon"
                       width={30}
                       height={40}

@@ -29,19 +29,19 @@ const Footer = () => {
           <h3>{FOOTER.followTitle}</h3>
           <div className={styles.icons}>
             <Image
-              src="/./images/facebook.svg"
+              src="/images/facebook.svg"
               alt="Facebook icon"
               width={50}
               height={50}
             />
             <Image
-              src="/./images/insta.svg"
+              src="/images/insta.svg"
               alt="Facebook icon"
               width={50}
               height={50}
             />
             <Image
-              src="/./images/tiktok.svg"
+              src="/images/tiktok.svg"
               alt="Facebook icon"
               width={50}
               height={50}

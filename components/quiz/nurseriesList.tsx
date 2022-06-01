@@ -4,7 +4,6 @@ import styles from "./QuizStyle.module.css";
 
 import ArrowBackBtn from "../buttons/arrowBackBtn";
 import { QuizContext } from "../../context/contextType";
-import Image from "next/image";
 import BabySvgIcon from "./icons/babySvgIcon";
 import CakeSvgIcon from "./icons/cakeSvgIcon";
 import DistanceSvgIcon from "./icons/distanceSvgIcon";
@@ -40,7 +39,6 @@ const fromAMorPM = (str: string) => {
 
 const NurseriesList = ({ foundNurseries }) => {
   const { formParams } = useContext(QuizContext);
-  const { isDesktop } = useContext(MediaContext);
 
   let ageFrom = 0;
   let ageTo = 100;
@@ -122,8 +120,6 @@ const NurseriesList = ({ foundNurseries }) => {
             ></div>
 
             <div className={styles.nurseryInfoWrapper}>
-              {" "}
-              <Image src={nursery.imageUrl} alt="" width={100} height={100} />
               <p>{nursery.careType}</p>
               <p
                 style={{

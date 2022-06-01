@@ -88,7 +88,7 @@ const PreferenceQuestionThree = () => {
       <div className={styles.wrapperDesktop}>
         <div className={styles.img}>
           <Image
-            src="/./images/quiz/Q-10.webp"
+            src="/images/quiz/Q-10.webp"
             alt="Quiz illustration"
             width={isDesktop ? 350 : 250}
             height={isDesktop ? 280 : 200}

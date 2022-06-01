@@ -24,7 +24,7 @@ const ShowResultsBtn = () => {
       <div className={styles.findResults}>
         <p>{BUTTONS.results}</p>
         <Image
-          src="/./images/quizIcons/arrow-next-white.png"
+          src="/images/quizIcons/arrow-next-white.png"
           alt="white arrow icon"
           width={30}
           height={20}

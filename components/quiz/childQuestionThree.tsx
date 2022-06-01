@@ -10,10 +10,10 @@ import ProgressBar from "./progressBar";
 import { MediaContext } from "../../context/mediaContextType";
 
 const answersArr = [
-  { option: "Tyrannosaurus rex", img: "/./images/quizIcons/tyrano.webp" },
-  { option: "Velociraptor", img: "/./images/quizIcons/velociraptor.webp" },
-  { option: "Diplodocus", img: "/./images/quizIcons/diplodocuss.webp" },
-  { option: "Stegosaurus", img: "/./images/quizIcons/stegosaurus.webp" },
+  { option: "Tyrannosaurus rex", img: "/images/quizIcons/tyrano.webp" },
+  { option: "Velociraptor", img: "/images/quizIcons/velociraptor.webp" },
+  { option: "Diplodocus", img: "/images/quizIcons/diplodocuss.webp" },
+  { option: "Stegosaurus", img: "/images/quizIcons/stegosaurus.webp" },
   {
     option: "Not my child’s cup of tea",
     img: "/./images/quizIcons/no-dinos.webp",
@@ -43,7 +43,7 @@ const ChildQuestionThree = () => {
       <div className={styles.wrapperDesktop}>
         <div className={styles.img}>
           <Image
-            src="/./images/quiz/Q5.webp"
+            src="/images/quiz/Q5.webp"
             alt="Quiz illustration"
             width={isDesktop ? 350 : 250}
             height={isDesktop ? 280 : 200}

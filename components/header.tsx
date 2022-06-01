@@ -21,7 +21,7 @@ const Header = () => {
           }
         >
           <Image
-            src="/./images/nurtureLogo.svg"
+            src="/images/nurtureLogo.svg"
             alt="nurture logo"
             width={100}
             height={50}

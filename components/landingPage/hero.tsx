@@ -28,7 +28,7 @@ const Hero = () => {
         </Link>
         <div className={styles.arrow}>
           <Image
-            src="/./images/arrow.webp"
+            src="/images/arrow.webp"
             alt="arrow indicator"
             width={150}
             height={70}
@@ -36,7 +36,7 @@ const Hero = () => {
         </div>
         <div className={styles.heroImg}>
           <Image
-            src="/./images/hero_img.webp"
+            src="/images/hero_img.webp"
             alt="children playing in the nursery"
             width={430}
             height={300}
@@ -45,7 +45,7 @@ const Hero = () => {
 
         <div className={styles.puzzles}>
           <Image
-            src="/./images/fallingPuzzles.webp"
+            src="/images/fallingPuzzles.webp"
             alt="puzzle pieces falling"
             width={70}
             height={70}
