@@ -95,3 +95,8 @@ input {
   accent-color: var(--primary);
   border-color: var(--primary);
 }
+@media screen and (min-width: 1024px) {
+  button {
+    width: 70%;
+  }
+}

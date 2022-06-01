@@ -1,5 +1,7 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
+import styles from "../quiz/QuizStyle.module.css";
+
 import React from "react";
 
 const NextQuestionBtn = () => {
@@ -18,7 +20,7 @@ const NextQuestionBtn = () => {
   };
 
   return (
-    <div onClick={previousPage}>
+    <div className={styles.arrowBack} onClick={previousPage}>
       <Image
         src="/./images/quizIcons/arrow-back-purple.png"
         alt=""

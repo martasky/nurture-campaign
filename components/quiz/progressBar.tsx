@@ -5,30 +5,37 @@ import styles from "./QuizStyle.module.css";
 
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { MediaContext } from "../../context/mediaContextType";
 
-const progressPuzzle = {
-  piece1: {
-    on: "/./images/progressBar/piece1-on.png",
-    off: "/./images/progressBar/piece1-off.png",
-  },
-  piece2: {
-    on: "/./images/progressBar/piece2-on.png",
-    off: "/./images/progressBar/piece2-off.png",
-  },
-  piece3: {
-    on: "/./images/progressBar/piece3-on.png",
-    off: "/./images/progressBar/piece3-off.png",
-  },
-  piece4: {
-    on: "/./images/progressBar/piece4-on.png",
-    off: "/./images/progressBar/piece4-off.png",
-  },
-  bars: {
-    up: "/./images/progressBar/separator-up.png",
-    down: "/./images/progressBar/separator-down.png",
-  },
-};
 const ProgressBar = () => {
+  const { isDesktop } = useContext(MediaContext);
+  const progressPuzzle = {
+    piece1: {
+      on: "/./images/progressBar/piece1-on.png",
+      off: "/./images/progressBar/piece1-off.png",
+    },
+    piece2: {
+      on: "/./images/progressBar/piece2-on.png",
+      off: "/./images/progressBar/piece2-off.png",
+    },
+    piece3: {
+      on: "/./images/progressBar/piece3-on.png",
+      off: "/./images/progressBar/piece3-off.png",
+    },
+    piece4: {
+      on: "/./images/progressBar/piece4-on.png",
+      off: "/./images/progressBar/piece4-off.png",
+    },
+    bars: {
+      up: isDesktop
+        ? "/./images/progressBar/separatorDesktopUp.png"
+        : "/./images/progressBar/separator-up.png",
+      down: isDesktop
+        ? "/./images/progressBar/separatorDesktopDown.png"
+        : "/./images/progressBar/separator-down.png",
+    },
+  };
+
   const router = useRouter();
 
   return (
@@ -37,18 +44,26 @@ const ProgressBar = () => {
         <Image
           src={progressPuzzle.piece1.on}
           alt=""
-          width={55}
-          height={60}
+          width={isDesktop ? 70 : 55}
+          height={isDesktop ? 80 : 60}
           objectFit="contain"
+          onClick={() =>
+            router.push({
+              pathname: "/quiz",
+              query: {
+                index: 1,
+              },
+            })
+          }
         />
       </div>
       <div className={styles.barImage}>
         <Image
           src={progressPuzzle.bars.down}
           alt=""
-          width={15}
-          height={5}
-          objectFit="contain"
+          width={isDesktop ? 120 : 15}
+          height={isDesktop ? 4 : 5}
+          objectFit={isDesktop ? "cover" : "contain"}
         />
       </div>
       <div>
@@ -59,18 +74,26 @@ const ProgressBar = () => {
               : progressPuzzle.piece2.on
           }
           alt=""
-          width={55}
-          height={60}
+          width={isDesktop ? 70 : 55}
+          height={isDesktop ? 80 : 60}
           objectFit="contain"
+          onClick={() =>
+            router.push({
+              pathname: "/quiz",
+              query: {
+                index: 3,
+              },
+            })
+          }
         />
       </div>
       <div className={styles.barImage}>
         <Image
           src={progressPuzzle.bars.up}
           alt=""
-          width={15}
-          height={5}
-          objectFit="contain"
+          width={isDesktop ? 120 : 15}
+          height={isDesktop ? 4 : 5}
+          objectFit={isDesktop ? "cover" : "contain"}
         />
       </div>
       <div>
@@ -85,18 +108,26 @@ const ProgressBar = () => {
               : progressPuzzle.piece3.on
           }
           alt=""
-          width={55}
-          height={60}
+          width={isDesktop ? 70 : 55}
+          height={isDesktop ? 80 : 60}
           objectFit="contain"
+          onClick={() =>
+            router.push({
+              pathname: "/quiz",
+              query: {
+                index: 6,
+              },
+            })
+          }
         />
       </div>
       <div className={styles.barImage}>
         <Image
           src={progressPuzzle.bars.down}
           alt=""
-          width={15}
-          height={5}
-          objectFit="contain"
+          width={isDesktop ? 120 : 15}
+          height={isDesktop ? 4 : 5}
+          objectFit={isDesktop ? "cover" : "contain"}
         />
       </div>
       <div>
@@ -109,9 +140,17 @@ const ProgressBar = () => {
               : progressPuzzle.piece4.off
           }
           alt=""
-          width={60}
-          height={60}
+          width={isDesktop ? 80 : 60}
+          height={isDesktop ? 80 : 60}
           objectFit="cover"
+          onClick={() =>
+            router.push({
+              pathname: "/quiz",
+              query: {
+                index: 8,
+              },
+            })
+          }
         />
       </div>
     </div>
