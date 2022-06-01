@@ -37,6 +37,7 @@ text-decoration: none;
   .videoContainer video{
     width: 70%;
     justify-self: center;
+  border-style: none;
    
   
     }

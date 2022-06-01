@@ -1,6 +1,7 @@
 import React from "react";
 import { TITLES } from "../../content/constants";
 import styles from "./productIntro.module.css";
+import Image from "next/image";
 const ProductIntro = () => {
   return (
     <div className={styles.container}>
@@ -24,9 +25,10 @@ const ProductIntro = () => {
         that easy!
       </p>
     </div>
-    <div className={styles.videoContainer}>
-      <video><source src="/./videos/animatedLogo.webm"></source></video>
-    </div>
+    <div className={styles.gifContainer}>
+    <img src="https://www.ehdesign.dk/final_exam/gif_long_loop.gif"></img>
+            
+         </div>
     <div className={styles.findContainer}><p>Find the perfect nursery with</p> <a href="https://findnurture.com/"><div><img src="/./images/nurtureLogo.svg"></img></div></a></div>
     </div>
   );
