@@ -1,15 +1,15 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
 import React from "react";
-import { BUTTONS } from "../../content/constants";
+
 const NextQuestionBtn = () => {
   const router = useRouter();
   const previousPage = () => {
     let index = router.query.index as string;
     let indexNumber = parseInt(index);
     indexNumber--;
-    console.log({ indexNumber });
-    router.replace({
+
+    router.push({
       pathname: "/quiz",
       query: {
         index: indexNumber,

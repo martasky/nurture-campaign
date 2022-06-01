@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 import { QUIZ } from "../../content/constants";
 import styles from "./QuizStyle.module.css";
 import NextQuestionBtn from "../buttons/nextQuestionBtn";
 import ArrowBackBtn from "../buttons/arrowBackBtn";
+import { QuizContext } from "../../context/contextType";
+import { handleChange } from "../../util/handleQuiz";
+import ProgressBar from "./progressBar";
 
 const answersArr = [
   { option: "Tyrannosaurus rex", img: "/./images/quizIcons/tyrano.webp" },
@@ -16,9 +19,21 @@ const answersArr = [
   },
 ];
 const ChildQuestionThree = () => {
+  const { formParams, setFormParams } = useContext(QuizContext);
+  const hasBeenClicked = Boolean(formParams.favDino) ? true : false;
+
   return (
     <div className={styles.container}>
       <ArrowBackBtn />
+      <ProgressBar />
+      <div className={styles.progressBarBg}>
+        <div
+          className={styles.progressBarFill}
+          style={{
+            width: "150px",
+          }}
+        ></div>
+      </div>
       <div className={styles.img}>
         <Image
           src="/./images/quiz/Q5.webp"
@@ -37,8 +52,10 @@ const ChildQuestionThree = () => {
               <input
                 type="radio"
                 id={`checkbox-${index}`}
-                name="dinoQuestion"
+                name="favDino"
                 value={answer.option}
+                checked={formParams.favDino === answer.option}
+                onChange={(event) => handleChange(event, setFormParams)}
               />
 
               <div className={styles.wrapper}>
@@ -56,7 +73,7 @@ const ChildQuestionThree = () => {
           ))}
         </ul>
       </div>
-      <NextQuestionBtn />
+      <NextQuestionBtn hasBeenClicked={hasBeenClicked} />
     </div>
   );
 };

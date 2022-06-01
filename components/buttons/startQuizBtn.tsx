@@ -4,8 +4,6 @@ import { BUTTONS } from "../../content/constants";
 const StartQuizBtn = () => {
   const router = useRouter();
   const nextPage = () => {
-    // let index = router.query.index as string;
-    // let indexNumber = parseInt(index);
     let indexNumber = 0;
     indexNumber++;
     console.log({ indexNumber });

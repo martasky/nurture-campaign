@@ -1,18 +1,17 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
-import React, { useContext } from "react";
+import React from "react";
+import { BUTTONS } from "../../content/constants";
 import styles from "../quiz/QuizStyle.module.css";
 
-import { QuizContext } from "../../context/contextType";
-
-const NextQuestionBtn = ({ hasBeenClicked }) => {
+const ShowResultsBtn = () => {
   const router = useRouter();
   const nextPage = () => {
     let index = router.query.index as string;
     let indexNumber = parseInt(index);
     indexNumber++;
     console.log({ indexNumber });
-    router.push({
+    router.replace({
       pathname: "/quiz",
       query: {
         index: indexNumber,
@@ -21,8 +20,9 @@ const NextQuestionBtn = ({ hasBeenClicked }) => {
   };
 
   return (
-    <button disabled={!hasBeenClicked} onClick={nextPage}>
+    <button onClick={nextPage}>
       <div className={styles.findResults}>
+        <p>{BUTTONS.results}</p>
         <Image
           src="/./images/quizIcons/arrow-next-white.png"
           alt=""
@@ -34,4 +34,4 @@ const NextQuestionBtn = ({ hasBeenClicked }) => {
   );
 };
 
-export default NextQuestionBtn;
+export default ShowResultsBtn;
