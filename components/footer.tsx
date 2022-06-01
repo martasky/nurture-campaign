@@ -13,7 +13,7 @@ const Footer = () => {
             <input type="text" placeholder={FOOTER.placeholderName}></input>
             <input type="email" placeholder={FOOTER.placeholderEmail}></input>
             <p className={styles.consent}>
-              By clicking “Sign up” you agree with our{" "}
+              By clicking “Sign up” you agree with our
               <span>terms and Conditions</span>.
             </p>
             <button type="submit" className={styles.cta}>

@@ -4,8 +4,7 @@ import styles from "./QuizStyle.module.css";
 
 import ArrowBackBtn from "../buttons/arrowBackBtn";
 import { QuizContext } from "../../context/contextType";
-import Image from "next/image";
-import Link from "next/link";
+
 import BabySvgIcon from "./icons/babySvgIcon";
 import CakeSvgIcon from "./icons/cakeSvgIcon";
 import DistanceSvgIcon from "./icons/distanceSvgIcon";
@@ -29,29 +28,62 @@ interface Nursery {
   ofstedRating: string;
   openingHours: {};
 }
+
+const fromAMorPM = (str: string) => {
+  let hour = parseInt(str.replace(/[A-Za-z]/g, ""));
+  let amOrPm = str.replace(/\d/g, "").toLowerCase();
+  if (amOrPm.localeCompare("pm") == 0) {
+    hour += 12;
+  }
+  return hour;
+};
+
 const NurseriesList = ({ foundNurseries }) => {
-  console.log(typeof foundNurseries);
-  const { formParams, setFormParams } = useContext(QuizContext);
+  const { formParams } = useContext(QuizContext);
   const { isDesktop } = useContext(MediaContext);
-  // const nurseryList = React.useMemo(() => {
-  //   if (!data) return null;
-  //   return data.filter((nursery) => {
-  //     nursery.ofstedRating === "Outstanding" &&
-  //       nursery.ageFrom === formParams.childAge;
-  //   });
-  // }, [data, formParams.childAge]);
 
-  let nurseryList = foundNurseries.filter(
-    (nursery) => nursery.ofstedRating === "Outstanding"
-    // nursery.ageFrom >= formParams.childAge.substring(0, 1)
-    // Object.values(formParams.parentPreferences).filter((elem) =>
-    //   nursery.about.includes(elem)
-    // )
-  );
+  let ageFrom = 0;
+  let ageTo = 100;
+  if (formParams.childAge.indexOf("6 months") > -1) {
+    ageTo = 0.5;
+  } else if (formParams.childAge.indexOf("6 - 24") > -1) {
+    ageTo = 2;
+  } else if (formParams.childAge.indexOf("1 - 3") > -1) {
+    ageFrom = 1;
+    ageTo = 3;
+  } else if (formParams.childAge.indexOf("3 - 5") > -1) {
+    ageFrom = 3;
+    ageTo = 5;
+  } else if (formParams.childAge.indexOf("5 years or") > -1) {
+    ageFrom = 5;
+  }
 
-  console.log(formParams.childAge.substring(0, 1));
+  let timeFrom = 11;
+  let timeTo = 14;
+  if (formParams.parentWork.indexOf("9 to 5") > -1) {
+    timeFrom = 9;
+    timeTo = 17;
+  } else if (formParams.parentWork.indexOf("in shifts") > -1) {
+    timeFrom = 7;
+    timeTo = 19;
+  }
 
-  console.log({ nurseryList });
+  let nurseryList = foundNurseries.filter((elem) => {
+    let result = elem.ageFrom <= ageFrom && elem.ageTo >= ageTo;
+    if ("openingHours" in elem) {
+      if ("monday" in elem.openingHours) {
+        if (elem.openingHours.monday != null) {
+          if ("from" in elem.openingHours.monday) {
+            result =
+              result &&
+              fromAMorPM(elem.openingHours.monday.from) <= timeFrom &&
+              fromAMorPM(elem.openingHours.monday.to) >= timeTo;
+          }
+        }
+      }
+    }
+    return result;
+  });
 
   return (
     <div className={styles.nurseriesContainer}>
@@ -63,16 +95,17 @@ const NurseriesList = ({ foundNurseries }) => {
             fontSize: "0.8rem",
             marginTop: "1rem",
             marginBottom: "0.5rem",
-            marginLeft: isDesktop ? "72px" : "0",
           }}
         >
-          {foundNurseries.length} results
+          {nurseryList.length} results
         </p>
       </div>
       <div className={styles.nurseriesDesktop}>
         {nurseryList.map((nursery: Nursery, index: number) => (
           <a
             href={`https://findnurture.com/settings/?id=${nursery.id}`}
+            target="_blank"
+            rel="noreferrer"
             key={`item-${index}`}
           >
             <div
