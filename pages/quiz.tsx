@@ -18,11 +18,11 @@ import NurseriesList from "../components/quiz/nurseriesList";
 import PreferenceQuestionOne from "../components/quiz/preferenceQuestionOne";
 import { QuizContext } from "../context/contextType";
 import { SearchNurseriesQuery } from "../util/handleQuiz";
-import { request, gql } from "graphql-request";
+import { request } from "graphql-request";
 
 const Quiz = () => {
   const router = useRouter();
-  const { formParams, setFormParams } = useContext(QuizContext);
+  const { formParams } = useContext(QuizContext);
   const [foundNurseries, setFoundNurseries] = useState([]);
   useEffect(() => {
     if (router.query.index == "2") {
@@ -37,7 +37,6 @@ const Quiz = () => {
       ).then((data) => setFoundNurseries(data.searchNurseries.nurseries ?? []));
     }
   }, [formParams, router.query.index]);
-  console.log({ foundNurseries });
 
   return (
     <>
@@ -63,9 +62,6 @@ const Quiz = () => {
         {router.query.index == "12" && (
           <NurseriesList foundNurseries={foundNurseries} />
         )}
-        {/* {foundNurseries.map((el, index) => (
-          <p key={index}>{el.about}</p>
-        ))} */}
       </div>
     </>
   );

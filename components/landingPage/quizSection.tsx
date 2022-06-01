@@ -1,16 +1,14 @@
 import React from "react";
-import { TITLES, INTROTXT, BUTTONS, TOQUIZTXT } from "../../content/constants";
-import Image from "next/image";
+import { TITLES, BUTTONS, TOQUIZTXT } from "../../content/constants";
 import styles from "./quizSection.module.css";
 import Link from "next/link";
 const QuizSection = () => {
   return (
     <>
       <div className={styles.container}>
-        <img src="/./images/babyDinno.webp"></img>
+        <img src="/./images/babyDinno.webp" alt="Baby dino illustration"></img>
         <div className={styles.textContainer}>
           <h2>
-            {" "}
             {TITLES.title} <span>fun</span>
           </h2>
           <p>{TOQUIZTXT.p1}</p>

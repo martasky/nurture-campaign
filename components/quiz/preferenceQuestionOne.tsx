@@ -115,9 +115,6 @@ const PreferenceQuestionOne = () => {
     [setParentPreferences, checkClick]
   );
 
-  console.log({ parentPreferences });
-  console.log({ formParams });
-  console.log("co to", Object.values(formParams.parentPreferences)[2]);
   return (
     <div className={styles.container}>
       <div className={styles.progressBarWrapper}>
@@ -138,7 +135,7 @@ const PreferenceQuestionOne = () => {
         <div className={styles.img}>
           <Image
             src="/./images/quiz/Q-8.webp"
-            alt=""
+            alt="Quiz illustration"
             width={isDesktop ? 350 : 250}
             height={isDesktop ? 280 : 200}
             objectFit="cover"

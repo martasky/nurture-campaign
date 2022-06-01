@@ -26,24 +26,13 @@ const ParentQuestionTwo = () => {
     answer3: Object.values(formParams.parentPersonality)[3],
     answer4: Object.values(formParams.parentPersonality)[4],
   });
-  // const hasBeenClicked = Object.values(formParams.parentPersonality).includes(
-  //   ""
-  // )
-  //   ? false
-  //   : true;
 
   const hasBeenClicked = true;
   useEffect(() => {
     handleRangeParent(setFormParams, parentPersonality);
   }, [parentPersonality, setFormParams]);
 
-  const getParentPersonality = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    answer: {
-      adj1: string;
-      adj2: string;
-    }
-  ) => {
+  const getParentPersonality = (event: React.ChangeEvent<HTMLInputElement>) => {
     let { name, value } = event.target;
 
     setParentPersonality((previousParentPersonality) => ({
@@ -51,8 +40,7 @@ const ParentQuestionTwo = () => {
       [name]: value,
     }));
   };
-  console.log({ parentPersonality });
-  console.log({ formParams });
+
   return (
     <div className={styles.container}>
       <div className={styles.progressBarWrapper}>
@@ -73,7 +61,7 @@ const ParentQuestionTwo = () => {
         <div className={styles.img}>
           <Image
             src="/./images/quiz/Q-7.webp"
-            alt=""
+            alt="Quiz illustration"
             width={isDesktop ? 350 : 250}
             height={isDesktop ? 280 : 200}
             objectFit="cover"
@@ -99,7 +87,7 @@ const ParentQuestionTwo = () => {
                     step="1"
                     value={Object.values(formParams.parentPersonality)[index]}
                     onChange={(event) => {
-                      getParentPersonality(event, answer);
+                      getParentPersonality(event);
                     }}
                   />
                 </li>

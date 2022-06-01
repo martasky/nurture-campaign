@@ -40,7 +40,7 @@ const PreferenceQuestionTwo = () => {
         <div className={styles.img}>
           <Image
             src="/./images/quiz/Q-9-1.webp"
-            alt=""
+            alt="Quiz illustration"
             width={isDesktop ? 350 : 250}
             height={isDesktop ? 280 : 200}
             objectFit="cover"

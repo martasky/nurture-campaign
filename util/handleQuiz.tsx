@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
-import { FormParamsType, QuizContext } from "../context/contextType";
+import React from "react";
+import { FormParamsType } from "../context/contextType";
 import { answersArr } from "../components/quiz/childQuestionTwo";
-import { request, gql } from "graphql-request";
+import { gql } from "graphql-request";
 
 export const SearchNurseriesQuery = gql`
   query SearchNurseriesQuery($input: SearchInput!) {
@@ -137,23 +137,6 @@ export const handleCheckboxNursery = (
     nurseryPreferences: nurseryPreferences,
   }));
 };
-// export const transformRangeValues = (
-//   value: number,
-//   answer: {
-//     adj1: string;
-//     adj2: string;
-//   }
-// ) => {
-//   let result: string;
-//   if (value > 25) {
-//     result = answer.adj2;
-//   } else if (value === 25) {
-//     result = `Neither ${answer.adj1.toLowerCase()} nor ${answer.adj2.toLowerCase()}`;
-//   } else {
-//     result = answer.adj1;
-//   }
-//   return result;
-// };
 
 export const transformRangeValues = (value: string, index: number) => {
   let result: string;
@@ -167,8 +150,6 @@ export const transformRangeValues = (value: string, index: number) => {
   } else {
     result = answersArr[index].adj1;
   }
-
-  console.log({ result });
 
   return result.toLocaleLowerCase();
 };

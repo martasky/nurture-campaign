@@ -70,7 +70,7 @@ const ChildQuestionTwo = () => {
         <div className={styles.img}>
           <Image
             src="/./images/quiz/Q4.webp"
-            alt=""
+            alt="Quiz illustration"
             width={isDesktop ? 350 : 250}
             height={isDesktop ? 280 : 200}
             objectFit="cover"

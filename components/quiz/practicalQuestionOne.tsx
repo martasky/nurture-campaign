@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 import { QUIZ } from "../../content/constants";
 import styles from "./QuizStyle.module.css";
@@ -36,13 +36,13 @@ const PracticalQuestionOne = () => {
         <div className={styles.img}>
           <Image
             src="/./images/quiz/Q1-1.webp"
-            alt=""
+            alt="Quiz illustration"
             width={isDesktop ? 350 : 250}
             height={isDesktop ? 280 : 200}
             objectFit="cover"
           />
         </div>
-        <div>
+        <div className={styles.inputWrapper}>
           <h2>{QUIZ.practicalQuestion1}</h2>
           <input
             className={styles.textInput}

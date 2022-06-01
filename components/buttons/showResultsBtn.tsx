@@ -10,7 +10,7 @@ const ShowResultsBtn = () => {
     let index = router.query.index as string;
     let indexNumber = parseInt(index);
     indexNumber++;
-    console.log({ indexNumber });
+
     router.replace({
       pathname: "/quiz",
       query: {
@@ -25,7 +25,7 @@ const ShowResultsBtn = () => {
         <p>{BUTTONS.results}</p>
         <Image
           src="/./images/quizIcons/arrow-next-white.png"
-          alt=""
+          alt="white arrow icon"
           width={30}
           height={20}
         />

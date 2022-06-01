@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 import { QUIZ } from "../../content/constants";
 import styles from "./QuizStyle.module.css";
@@ -15,11 +15,15 @@ const FinalScreen = () => {
     <div className={`${styles.container} ${styles.finalResultContainer}`}>
       <ArrowBackBtn />
       <div className={`${styles.wrapperDesktop} ${styles.finalResultWrapper}`}>
-        <div>
+        <div
+          style={{
+            display: "grid",
+          }}
+        >
           <div className={styles.img}>
             <Image
               src="/./images/quiz/puzzle.webp"
-              alt=""
+              alt="Quiz illustration puzzle"
               width={isDesktop ? 250 : 150}
               height={isDesktop ? 250 : 150}
               objectFit="contain"
@@ -46,13 +50,13 @@ const FinalScreen = () => {
                 <span>
                   <Image
                     src="/./images/quizIcons/location.webp"
-                    alt=""
+                    alt="Quiz icon"
                     width={30}
                     height={40}
                     objectFit="contain"
                   />
                 </span>
-                Nurseries located near{" "}
+                Nurseries located near
                 {formParams.location[0]?.toUpperCase() +
                   formParams.location.substring(1)}
               </li>
@@ -60,13 +64,13 @@ const FinalScreen = () => {
                 <span>
                   <Image
                     src="/./images/quizIcons/clock.webp"
-                    alt=""
+                    alt="Quiz icon"
                     width={30}
                     height={40}
                     objectFit="contain"
                   />
                 </span>
-                Available{" "}
+                Available
                 {formParams.startTime[0]?.toLowerCase() +
                   formParams.startTime.substring(1)}
               </li>
@@ -80,7 +84,7 @@ const FinalScreen = () => {
                 <span>
                   <Image
                     src="/./images/quizIcons/ratio.webp"
-                    alt=""
+                    alt="Quiz icon"
                     width={30}
                     height={40}
                     objectFit="contain"
@@ -155,7 +159,7 @@ const FinalScreen = () => {
                   <span>
                     <Image
                       src="/./images/quizIcons/rating.webp"
-                      alt=""
+                      alt="Quiz icon"
                       width={30}
                       height={40}
                       objectFit="contain"

@@ -1,11 +1,25 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./header.module.css";
+
+import { useRouter } from "next/router";
 const Header = () => {
+  const router = useRouter();
+
   return (
     <>
-      <section className={styles.sect}>
-        <div className={styles.img}>
+      <section
+        className={styles.sect}
+        style={{ position: router.pathname === "/quiz" ? "static" : "fixed" }}
+      >
+        <div
+          className={styles.img}
+          onClick={() =>
+            router.push({
+              pathname: "/",
+            })
+          }
+        >
           <Image
             src="/./images/nurtureLogo.svg"
             alt="nurture logo"

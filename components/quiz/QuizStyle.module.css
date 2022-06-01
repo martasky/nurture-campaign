@@ -26,6 +26,9 @@
   margin-top: 3rem;
 }
 
+.inputWrapper {
+  display: grid;
+}
 .container h2 {
   font-size: 1.2rem;
   font-weight: 700;
@@ -382,5 +385,22 @@
   }
   .finalResultWrapper h1 {
     font-size: 2.75rem;
+  }
+  .inputWrapper {
+    display: initial;
+  }
+  .nurseriesDesktop {
+    width: 800px;
+    display: grid;
+    justify-content: center;
+  }
+  .nurseriesContainer {
+    display: grid;
+    justify-content: center;
+  }
+  .resultNumberWrapper {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
   }
 }

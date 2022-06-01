@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { TITLES, VALUE_PROPOSITION } from "../../content/constants";
 import Image from "next/image";
 import styles from "./ValueProposition.module.css";
+import { MediaContext } from "../../context/mediaContextType";
 
 const ValueProposition = () => {
+  const { isDesktop } = useContext(MediaContext);
   return (
     <div className={styles.container1}>
       <h2>
@@ -14,10 +16,11 @@ const ValueProposition = () => {
         <div className={styles.card}>
           <div className={styles.img}>
             <Image
-              src="/./images/purplePuzzle.png"
-              alt=""
-              width={100}
-              height={100}
+              src="/./images/purplepuzzle.webp"
+              alt="Puzzle illustration"
+              width={isDesktop ? 160 : 180}
+              height={isDesktop ? 160 : 180}
+              objectFit="cover"
             />
           </div>
 
@@ -32,27 +35,29 @@ const ValueProposition = () => {
         <div className={styles.card}>
           <div className={styles.img}>
             <Image
-              src="/./images/yellowPuzzle.png"
-              alt=""
-              width={100}
-              height={100}
+              src="/./images/yellowPuzzle.webp"
+              alt="Puzzle illustration"
+              width={isDesktop ? 160 : 180}
+              height={isDesktop ? 160 : 180}
+              objectFit="cover"
             />
           </div>
 
           <h3>{VALUE_PROPOSITION.subtitle2}</h3>
           <p>
-            <strong> Don't spend time</strong> checking nurseries in different
-            pages or googling for ratings. Find your list of nurseries and
-            contact them straight away.
+            <strong> Don&apos;t spend time</strong> checking nurseries in
+            different pages or googling for ratings. Find your list of nurseries
+            and contact them straight away.
           </p>
         </div>
         <div className={styles.card}>
           <div className={styles.img}>
             <Image
-              src="/./images/pinkPuzzle.png"
-              alt=""
-              width={100}
-              height={100}
+              src="/./images/pinkPuzzle.webp"
+              alt="Puzzle illustration"
+              width={isDesktop ? 160 : 180}
+              height={isDesktop ? 160 : 180}
+              objectFit="contain"
             />
           </div>
 

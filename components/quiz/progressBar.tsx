@@ -1,10 +1,7 @@
 import React, { useContext } from "react";
 import Image from "next/image";
-
 import styles from "./QuizStyle.module.css";
-
 import { useRouter } from "next/router";
-import Link from "next/link";
 import { MediaContext } from "../../context/mediaContextType";
 
 const ProgressBar = () => {
@@ -43,7 +40,7 @@ const ProgressBar = () => {
       <div>
         <Image
           src={progressPuzzle.piece1.on}
-          alt=""
+          alt="Puzzle progres bar illustration"
           width={isDesktop ? 70 : 55}
           height={isDesktop ? 80 : 60}
           objectFit="contain"
@@ -60,7 +57,7 @@ const ProgressBar = () => {
       <div className={styles.barImage}>
         <Image
           src={progressPuzzle.bars.down}
-          alt=""
+          alt="Puzzle progres bar illustration"
           width={isDesktop ? 120 : 15}
           height={isDesktop ? 4 : 5}
           objectFit={isDesktop ? "cover" : "contain"}
@@ -73,7 +70,7 @@ const ProgressBar = () => {
               ? progressPuzzle.piece2.off
               : progressPuzzle.piece2.on
           }
-          alt=""
+          alt="Puzzle progres bar illustration"
           width={isDesktop ? 70 : 55}
           height={isDesktop ? 80 : 60}
           objectFit="contain"
@@ -90,7 +87,7 @@ const ProgressBar = () => {
       <div className={styles.barImage}>
         <Image
           src={progressPuzzle.bars.up}
-          alt=""
+          alt="Puzzle progres bar illustration"
           width={isDesktop ? 120 : 15}
           height={isDesktop ? 4 : 5}
           objectFit={isDesktop ? "cover" : "contain"}
@@ -107,7 +104,7 @@ const ProgressBar = () => {
               ? progressPuzzle.piece3.off
               : progressPuzzle.piece3.on
           }
-          alt=""
+          alt="Puzzle progres bar illustration"
           width={isDesktop ? 70 : 55}
           height={isDesktop ? 80 : 60}
           objectFit="contain"
@@ -124,7 +121,7 @@ const ProgressBar = () => {
       <div className={styles.barImage}>
         <Image
           src={progressPuzzle.bars.down}
-          alt=""
+          alt="Puzzle progres bar illustration"
           width={isDesktop ? 120 : 15}
           height={isDesktop ? 4 : 5}
           objectFit={isDesktop ? "cover" : "contain"}
@@ -139,7 +136,7 @@ const ProgressBar = () => {
               ? progressPuzzle.piece4.on
               : progressPuzzle.piece4.off
           }
-          alt=""
+          alt="Puzzle progres bar illustration"
           width={isDesktop ? 80 : 60}
           height={isDesktop ? 80 : 60}
           objectFit="cover"

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 import { QUIZ } from "../../content/constants";
 import styles from "./QuizStyle.module.css";
@@ -44,7 +44,7 @@ const PracticalQuestionTwo = () => {
         <div className={styles.img}>
           <Image
             src="/./images/quiz/Q2.webp"
-            alt=""
+            alt="Quiz illustration"
             width={isDesktop ? 350 : 250}
             height={isDesktop ? 280 : 200}
             objectFit="cover"
