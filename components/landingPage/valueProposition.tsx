@@ -16,7 +16,7 @@ const ValueProposition = () => {
         <div className={styles.card}>
           <div className={styles.img}>
             <Image
-              src="/./images/purplepuzzle.webp"
+              src="/images/purplepuzzle.webp"
               alt="Puzzle illustration"
               width={isDesktop ? 160 : 180}
               height={isDesktop ? 160 : 180}
@@ -35,7 +35,7 @@ const ValueProposition = () => {
         <div className={styles.card}>
           <div className={styles.img}>
             <Image
-              src="/./images/yellowPuzzle.webp"
+              src="/images/yellowPuzzle.webp"
               alt="Puzzle illustration"
               width={isDesktop ? 160 : 180}
               height={isDesktop ? 160 : 180}
@@ -53,7 +53,7 @@ const ValueProposition = () => {
         <div className={styles.card}>
           <div className={styles.img}>
             <Image
-              src="/./images/pinkPuzzle.webp"
+              src="/images/pinkPuzzle.webp"
               alt="Puzzle illustration"
               width={isDesktop ? 160 : 180}
               height={isDesktop ? 160 : 180}
