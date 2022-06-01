@@ -20,7 +20,7 @@ const ProductExplanation = () => {
     
   </div>
   <div className={styles.videoContainer}>
-    <video controls><source src="/./videos/test.mp4"></source></video>
+    <video loop muted autoPlay><source src="https://www.ehdesign.dk/final_exam/recording_nurture.mp4"></source></video>
   </div>
   <div className={styles.findContainer}><p>Find the perfect nursery with</p> <a href="https://findnurture.com/"><div><img src="/./images/nurtureLogo.svg"></img></div></a></div>
   </div></>;
