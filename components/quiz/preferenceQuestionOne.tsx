@@ -7,6 +7,7 @@ import ArrowBackBtn from "../buttons/arrowBackBtn";
 import { QuizContext } from "../../context/contextType";
 import { handleCheckbox } from "../../util/handleQuiz";
 import ProgressBar from "./progressBar";
+import { MediaContext } from "../../context/mediaContextType";
 
 const answersArr = [
   { option: "Location", img: "/./images/quizIcons/location.webp" },
@@ -47,6 +48,7 @@ const answersArr = [
 
 const PreferenceQuestionOne = () => {
   const { formParams, setFormParams } = useContext(QuizContext);
+  const { isDesktop } = useContext(MediaContext);
   const [hasBeenClicked, setHasBeenClicked] = useState(false);
 
   const [parentPreferences, setParentPreferences] = useState({
@@ -118,59 +120,70 @@ const PreferenceQuestionOne = () => {
   console.log("co to", Object.values(formParams.parentPreferences)[2]);
   return (
     <div className={styles.container}>
-      <ArrowBackBtn />
-      <ProgressBar />
-      <div className={styles.progressBarBg}>
-        <div
-          className={styles.progressBarFill}
-          style={{
-            width: "240px",
-          }}
-        ></div>
+      <div className={styles.progressBarWrapper}>
+        <ArrowBackBtn />
+        <div>
+          <ProgressBar />
+          <div className={styles.progressBarBg}>
+            <div
+              className={styles.progressBarFill}
+              style={{
+                width: isDesktop ? "640px" : "240px",
+              }}
+            ></div>
+          </div>
+        </div>
       </div>
-      <div className={styles.img}>
-        <Image
-          src="/./images/quiz/Q-8.webp"
-          alt=""
-          width={250}
-          height={200}
-          objectFit="cover"
-        />
-      </div>
-      <div className={styles.wrapper}></div>
-      <h2>{QUIZ.preferenceQuestion1}</h2>
-      <div className={styles.answersWrapper}>
-        <ul className={`${styles.imageCheckbox} ${styles.preferencesCheckbox}`}>
-          {answersArr.map((answer, index) => (
-            <li key={`checkbox-${index}`}>
-              <input
-                type="checkbox"
-                id={`checkbox-${index}`}
-                name={`answer${index}`}
-                value={answer.option}
-                checked={
-                  Object.values(formParams.parentPreferences)[index] ===
-                  answer.option
-                }
-                onChange={(event) => getParentPreferences(event, answer.option)}
-              />
+      <div className={styles.wrapperDesktop}>
+        <div className={styles.img}>
+          <Image
+            src="/./images/quiz/Q-8.webp"
+            alt=""
+            width={isDesktop ? 350 : 250}
+            height={isDesktop ? 280 : 200}
+            objectFit="cover"
+          />
+        </div>
+        <div>
+          <h2>{QUIZ.preferenceQuestion1}</h2>
+          <div className={styles.answersWrapper}>
+            <ul
+              className={`${styles.imageCheckbox} ${styles.preferencesCheckbox}`}
+            >
+              {answersArr.map((answer, index) => (
+                <li key={`checkbox-${index}`}>
+                  <input
+                    type="checkbox"
+                    id={`checkbox-${index}`}
+                    name={`answer${index}`}
+                    value={answer.option}
+                    checked={
+                      Object.values(formParams.parentPreferences)[index] ===
+                      answer.option
+                    }
+                    onChange={(event) =>
+                      getParentPreferences(event, answer.option)
+                    }
+                  />
 
-              <div className={styles.wrapper}>
-                <div className={styles.imageLabel}>{answer.option}</div>
-                <Image
-                  src={answer.img}
-                  alt={answer.option}
-                  width={25}
-                  height={25}
-                  objectFit="cover"
-                />
-              </div>
-              <label htmlFor={`checkbox-${index}`}></label>
-            </li>
-          ))}
-        </ul>
+                  <div className={styles.wrapper}>
+                    <div className={styles.imageLabel}>{answer.option}</div>
+                    <Image
+                      src={answer.img}
+                      alt={answer.option}
+                      width={25}
+                      height={25}
+                      objectFit="cover"
+                    />
+                  </div>
+                  <label htmlFor={`checkbox-${index}`}></label>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <NextQuestionBtn hasBeenClicked={isDisabled} />
+        </div>
       </div>
-      <NextQuestionBtn hasBeenClicked={isDisabled} />
     </div>
   );
 };

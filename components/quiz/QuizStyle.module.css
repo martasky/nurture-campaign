@@ -17,11 +17,12 @@
   margin: 0 1rem 1rem;
 }
 
-.wrapper {
+.wrapperDesktop {
   display: grid;
 }
 .img {
   justify-self: center;
+
   margin-top: 3rem;
 }
 
@@ -29,7 +30,7 @@
   font-size: 1.2rem;
   font-weight: 700;
   text-align: center;
-  width: 80%;
+  /* width: 80%; */
   justify-self: center;
 }
 .specialTextInput {
@@ -76,6 +77,7 @@
 .findResults p {
   margin: 0 15px 0 0;
 }
+
 .finalResultContainer p {
   margin: 0 0.8rem;
 }
@@ -273,13 +275,13 @@
 .progressBarBg {
   margin: 0 auto;
   width: 300px;
-  height: 15px;
+  height: 10px;
   background-color: #f6f6f6;
   border-radius: 10px;
 }
 
 .progressBarFill {
-  height: 15px;
+  height: 10px;
   background-color: var(--color1);
   border-radius: 10px 0 0 10px;
 }
@@ -291,5 +293,94 @@
   }
   .answersWrapper {
     padding: 0 1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .progressBar {
+    width: 800px;
+    max-width: none;
+
+    justify-items: center;
+  }
+  .wrapperDesktop {
+    width: 800px;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    margin: 0 auto;
+    gap: 3rem;
+    padding-top: 1rem;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  .img {
+    margin-top: 0;
+  }
+  .container h2 {
+    text-align: left;
+  }
+  .answersWrapper {
+    padding: 0;
+  }
+  .container {
+    width: 820px;
+    margin: 0 auto;
+    align-content: center;
+    height: auto;
+  }
+  .arrowBack {
+    margin-right: 50px;
+  }
+  .progressBarWrapper {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+  }
+  .progressBarBg {
+    width: 800px;
+    margin-top: 0.5rem;
+  }
+
+  .progressBarFill {
+    height: 10px;
+    background-color: var(--color1);
+    border-radius: 10px 0 0 10px;
+  }
+  .wrapperStart {
+    place-items: center;
+    text-align: left;
+  }
+  .wrapperStart h1,
+  .wrapperStart p {
+    text-align: left;
+    margin-left: 0;
+  }
+  .wrapperStart h1 {
+    font-size: 3.12rem;
+    margin-bottom: 1rem;
+  }
+  .wrapperStart p {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+  .startText {
+    display: grid;
+  }
+  .preferencesCheckbox .wrapper {
+    padding: 0.5rem 1rem;
+    width: max-content;
+  }
+  .resultWrapper {
+    display: grid;
+  }
+  .resultWrapper ul {
+    gap: 0.5rem;
+  }
+  .finalResultWrapper {
+    align-items: start;
+    font-size: 0.93rem;
+  }
+  .finalResultWrapper h1 {
+    font-size: 2.75rem;
   }
 }

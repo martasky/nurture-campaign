@@ -7,6 +7,7 @@ import ArrowBackBtn from "../buttons/arrowBackBtn";
 import { QuizContext } from "../../context/contextType";
 import { handleChange, handleCheckboxNursery } from "../../util/handleQuiz";
 import ProgressBar from "./progressBar";
+import { MediaContext } from "../../context/mediaContextType";
 
 export enum answers {
   A1 = "It is open out of the regular office hours",
@@ -16,6 +17,7 @@ export enum answers {
 }
 const PreferenceQuestionThree = () => {
   const { formParams, setFormParams } = useContext(QuizContext);
+  const { isDesktop } = useContext(MediaContext);
   const [hasBeenClicked, setHasBeenClicked] = useState(false);
   const [nurseryPreferences, setNurseryPreferences] = useState({
     answer0: Object.values(formParams.nurseryPreferences)[0],
@@ -69,49 +71,57 @@ const PreferenceQuestionThree = () => {
   console.log({ formParams });
   return (
     <div className={styles.container}>
-      <ArrowBackBtn />
-      <ProgressBar />
-      <div className={styles.progressBarBg}>
-        <div
-          className={styles.progressBarFill}
-          style={{
-            width: "300px",
-            borderRadius: "10px",
-          }}
-        ></div>
+      <div className={styles.progressBarWrapper}>
+        <ArrowBackBtn />
+        <div>
+          <ProgressBar />
+          <div className={styles.progressBarBg}>
+            <div
+              className={styles.progressBarFill}
+              style={{
+                width: isDesktop ? "800px" : "300px",
+                borderRadius: "10px",
+              }}
+            ></div>
+          </div>
+        </div>
       </div>
-      <div className={styles.img}>
-        <Image
-          src="/./images/quiz/Q-10.webp"
-          alt=""
-          width={250}
-          height={200}
-          objectFit="cover"
-        />
+      <div className={styles.wrapperDesktop}>
+        <div className={styles.img}>
+          <Image
+            src="/./images/quiz/Q-10.webp"
+            alt=""
+            width={isDesktop ? 350 : 250}
+            height={isDesktop ? 280 : 200}
+            objectFit="cover"
+          />
+        </div>
+        <div>
+          <h2>{QUIZ.preferenceQuestion3}</h2>
+          <div className={styles.answersWrapper}>
+            <ul>
+              {Object.values(answers).map((answer, index) => (
+                <li key={answer}>
+                  <input
+                    className={styles.customizedCheckboxBtn}
+                    type="checkbox"
+                    id={answer}
+                    value={answer}
+                    name={`answer${index}`}
+                    checked={
+                      Object.values(formParams.nurseryPreferences)[index] ===
+                      answer
+                    }
+                    onChange={(event) => getNurseryPreferences(event, answer)}
+                  />
+                  <label htmlFor={answer}>{answer}</label>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <NextQuestionBtn hasBeenClicked={isDisabled} />
+        </div>
       </div>
-      <div className={styles.wrapper}></div>
-      <h2>{QUIZ.preferenceQuestion3}</h2>
-      <div className={styles.answersWrapper}>
-        <ul>
-          {Object.values(answers).map((answer, index) => (
-            <li key={answer}>
-              <input
-                className={styles.customizedCheckboxBtn}
-                type="checkbox"
-                id={answer}
-                value={answer}
-                name={`answer${index}`}
-                checked={
-                  Object.values(formParams.nurseryPreferences)[index] === answer
-                }
-                onChange={(event) => getNurseryPreferences(event, answer)}
-              />
-              <label htmlFor={answer}>{answer}</label>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <NextQuestionBtn hasBeenClicked={isDisabled} />
     </div>
   );
 };
