@@ -1,4 +1,10 @@
-.container {
+.container1  {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1vw 10vh 1vw
+}
+
+.container2 {
   display: grid;
 }
 
@@ -19,9 +25,72 @@
 .card h3 {
   margin: 0.5rem 0;
 }
-.container h2 {
+.container1 h2 {
   margin-bottom: 0;
 }
-.container h2 span {
+.container1 h2 span {
   color: var(--primary);
+}
+
+
+@media screen and (min-width: 400px){
+  .container2 {
+    margin: 0  7vw
+  }
+
+  .container1 {
+    margin-bottom: 15vh
+  }
+
+  .container2 img {
+    margin: 0 auto
+  }
+   
+}
+
+@media screen and (min-width: 600px){
+  .container2 {
+    margin: 0  15vw 20vh 15vw
+  }
+   
+}
+
+@media screen and (min-width: 800px){
+
+  .container1 {
+    align-items:center
+  }
+
+  .container2 {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+   justify-content: space-around;
+   gap: 2em;
+
+  }
+
+  
+}
+
+@media screen and (min-width: 970px){
+  .container1 {
+    margin: 0 10vw 20vh 10vw
+  }
+}
+
+@media screen and (min-width: 1350px){
+  .container1 {
+    margin: 0 15vw 15vh 15vw;
+  }
+  .container2 {
+    gap: 5em
+  }
+}
+
+@media screen and (min-width: 1600px){
+  .container1 {
+    margin: 0 20vw 15vh 20vw;
+  }
 }

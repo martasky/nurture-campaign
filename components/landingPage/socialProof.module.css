@@ -1,0 +1,135 @@
+.container{
+    display: grid; 
+    grid-gap: 1em;
+    margin-top: 10vh
+}
+
+.title h2{
+    margin:0
+}
+.title h2 span{
+    color: var(--color3);
+    margin: 0;
+}
+
+.testimonials{
+    display: grid; 
+    grid-gap: 1em;
+    margin-top: 3vh;
+}
+
+.user.left{
+    display: grid; 
+    grid-template-columns: 1fr 4fr;
+    gap:1em
+
+}
+
+.user.right{
+    display: grid; 
+    grid-template-columns: 4fr 1fr;
+    gap:1em
+
+}
+
+.user img{
+    max-width: 70px;
+    grid-row: 3;
+    border-radius: 50px;
+    justify-self:center
+}
+
+
+.message.left{
+    grid-row: 1/4;
+    grid-column: 2/-1;
+    padding: 1em 2em;
+    border-radius: 20px;
+    position: relative;
+}
+
+.message.right{
+    grid-row: 1/4;
+    grid-column: 1/2;
+    padding: 1em 2em;
+    border-radius: 20px;
+    position: relative;
+}
+.yellow{
+    background-color: rgba(253, 205, 0, 0.47) ;
+}
+.pink{
+    background-color: rgba(254, 210, 232, 1);
+    ;
+}
+.blue{
+    background-color: rgba(198, 233, 253, 1);
+    ;
+}
+
+.message::after {
+    content:"";
+    border: 20px solid transparent;
+    position: absolute;
+}
+
+.left.message.yellow::after{
+    border-right-color: rgba(253, 205, 0, 0.47);
+  border-left: 0;
+  left: -20px; top: 75%;
+  margin-top: -20px;
+}
+
+.left.message.blue::after{
+    border-right-color: rgba(198, 233, 253, 1);
+  border-left: 0;
+  left: -20px; top: 75%;
+  margin-top: -20px;
+}
+
+.right.message::after{
+    border-left-color: rgba(254, 210, 232, 1);;
+  border-right: 0;
+  right: -20px; top: 75%;
+  margin-top: -20px;
+  z-index: -1;
+}
+
+.name {
+    font-weight: 600;
+}
+
+@media screen and (min-width: 400px){
+    .container{
+        margin: 10vh 5vw
+    }
+     
+  }
+  
+  @media screen and (min-width: 800px){
+  
+    .container{
+        margin: 20vh 15vw 20vh 15vw
+    }
+  .title h2, .description{
+text-align: center;
+  }
+  .user img{
+    max-width: 100px;
+  }
+  .testimonials{
+    grid-gap:3em
+}
+
+    
+  }
+  
+ 
+  
+  @media screen and (min-width: 1600px){
+  
+    .container{
+        margin: 10vh 20vw 15vh 20vw
+    }
+ 
+  }

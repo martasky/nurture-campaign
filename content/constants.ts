@@ -31,8 +31,6 @@ export enum TITLES {
   headingTwo = "to find a nursery",
 }
 
-export enum FOOTER {}
-
 export enum QUIZ {
   title = "Before you start...",
   introduction = "There are no wrong answers. Go for the option you feel more identified with.",
@@ -49,4 +47,26 @@ export enum QUIZ {
   summary = "Your personal preferences are:",
   seeList = "After analysing your answers, we have set a list of nurseries for you:",
   thankYou = "Thank you!",
+}
+export enum INTROTXT {
+  p1 = "With Nurture, you can search for the best nurseries in your area.",
+  p2 = "If you are unsure about which kind of nursery is best for your child's needs, take our quiz!",
+}
+
+export enum TOQUIZTXT {
+  p1 = "Looking for the right nursery means considering lots of things, and we know you have tons of questions. At Nurture we want to help you find the right answers.",
+  p2 = "That's the reason why we have developed a little test. Just a few curated questions that will help us find the best daycare for your child, based on their needs and yours.",
+}
+
+export enum FOOTER {
+  newstitle = "Keep up with NURTURE",
+  newstext = "Subscribe to our newsletter and never miss a bit.",
+  placeholderName = "Enter your name",
+  placeholderEmail = "Enter your email",
+  contactTitle = "Contact",
+  contactMail = "support@findnurture.com",
+  followTitle = "Follow Us",
+  legalPrivacy = "Privacy Policy",
+  legalTerms = "Terms & Conditions",
+  legalCookies = "Cookies",
 }

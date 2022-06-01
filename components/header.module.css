@@ -1,0 +1,60 @@
+.sect {
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2em;
+    align-items: center;
+    padding: 1em 19px;
+    margin: 0;
+    background-color: white;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 3;
+}
+
+.cta{
+border: 2px solid var(--primary);
+border-radius: 50px;
+padding: 10px 20px;
+width: 150px;
+font-size: 0.8em;
+color:var(--primary) ;
+text-transform: uppercase;
+font-weight: 600;
+text-align: center;
+}
+
+
+@media screen and (min-width: 400px){
+    .sect{
+        height: 5em;
+    }
+}
+
+@media screen and (min-width: 600px){
+    .sect{
+        height: 5em;
+    }
+}
+
+@media screen and (min-width: 800px){
+    .sect{
+        padding: 1em 3em;
+    }
+}
+
+@media screen and (min-width: 950px){
+    .sect{
+        padding: 1em 5em;
+    }
+
+   }
+
+   @media screen and (min-width: 1600px){
+    .sect{
+        padding: 1em 15em;
+    }
+
+   }

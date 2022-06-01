@@ -5,19 +5,19 @@ import styles from "./ValueProposition.module.css";
 
 const ValueProposition = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container1}>
       <h2>
         {TITLES.title}
         <span>easy</span>
       </h2>
-      <div className={styles.container}>
+      <div className={styles.container2}>
         <div className={styles.card}>
           <div className={styles.img}>
             <Image
               src="/./images/purplePuzzle.png"
               alt=""
-              width={200}
-              height={200}
+              width={100}
+              height={100}
             />
           </div>
 
@@ -34,14 +34,14 @@ const ValueProposition = () => {
             <Image
               src="/./images/yellowPuzzle.png"
               alt=""
-              width={200}
-              height={200}
+              width={100}
+              height={100}
             />
           </div>
 
           <h3>{VALUE_PROPOSITION.subtitle2}</h3>
           <p>
-            <strong> Don’t spend time</strong> checking nurseries in different
+            <strong> Don't spend time</strong> checking nurseries in different
             pages or googling for ratings. Find your list of nurseries and
             contact them straight away.
           </p>
@@ -51,8 +51,8 @@ const ValueProposition = () => {
             <Image
               src="/./images/pinkPuzzle.png"
               alt=""
-              width={200}
-              height={200}
+              width={100}
+              height={100}
             />
           </div>
 
