@@ -14,8 +14,8 @@ const QuizStart = () => {
           <Image
             src={
               isDesktop
-                ? "/images/baby-dino-desktop.png"
-                : "/images/dino-baby.png"
+                ? "/images/baby-dino-desktop.webp"
+                : "/images/dino-baby.webp"
             }
             alt=""
             width={isDesktop ? 378 : 300}

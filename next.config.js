@@ -11,4 +11,9 @@ module.exports = {
     ],
     formats: ["image/webp"],
   },
+
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
 };

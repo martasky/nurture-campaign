@@ -110,7 +110,7 @@ const NurseriesList = ({ foundNurseries }) => {
               style={{
                 backgroundImage: nursery.imageUrl
                   ? `url(${nursery.imageUrl})`
-                  : `url(/./images/quiz/defaultImg.png)`,
+                  : `url(/./images/quiz/defaultImg.webp)`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 width: "122px",
