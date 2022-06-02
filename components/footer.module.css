@@ -35,7 +35,8 @@
     border-radius: 50px;
     border-color: transparent;
     padding: 10px 20px;
-    width: 150px;
+    width: 95vw;
+    height: 50px;
     font-size: 1em;
     color:white ;
     text-transform: uppercase;
@@ -118,7 +119,9 @@
         align-self: start ;
     }
     .cta{
-        margin:0
+        margin:0;
+        width: 150px; 
+        height: 40px
     }
 }
 

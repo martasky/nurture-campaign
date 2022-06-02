@@ -16,6 +16,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
 .findContainer p {
   font-weight: 600;
@@ -25,7 +26,7 @@
   border: 2px solid var(--primary);
   border-radius: 50px;
   padding: 10px 20px;
-  width: 50vw;
+  width: 90vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,6 +36,7 @@
   .container {
     margin: 10vh 5vw;
   }
+  
 }
 
 @media screen and (min-width: 600px) {
@@ -43,6 +45,10 @@
   }
   .gifContainer {
     margin: auto;
+  }
+  .findContainer div {
+   
+    width: 50vw;
   }
 }
 
